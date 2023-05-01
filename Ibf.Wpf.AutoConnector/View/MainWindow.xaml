@@ -1,0 +1,24 @@
+﻿<Window x:Class="Ibf.Wpf.AutoConnector.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ibf.Wpf.AutoConnector"
+        xmlns:viewModel="clr-namespace:Ibf.Wpf.AutoConnector.ViewModel"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance viewModel:MainViewModel}"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <DockPanel>
+            <Label DockPanel.Dock="Left">Benutzername:</Label>
+            <TextBox Text="{Binding UserName}"></TextBox>
+        </DockPanel>
+        
+        <DockPanel>
+            <Label DockPanel.Dock="Left">Password:</Label>
+            <PasswordBox x:Name="PasswordBox" PasswordChanged="OnPasswordChanged"/>
+        </DockPanel>
+        
+        <Button Command="{Binding SaveCommand}">Save</Button>
+    </StackPanel>
+</Window>
